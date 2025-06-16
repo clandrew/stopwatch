@@ -98,6 +98,30 @@ INT_PTR CALLBACK DialogMessageHandler(HWND hDlg, UINT message, WPARAM wParam, LP
             g_hDlg = hDlg;
             g_hDot = GetDlgItem(g_hDlg, IDC_DOT);
             ShowWindow(g_hDot, SW_HIDE);
+
+            HFONT hFont;
+
+            hFont = CreateFont(
+                48,// height
+                0, // width
+                0, // escapement
+                0, // orientation
+                FW_NORMAL, // weight
+                0, // italic
+                0, // underline
+                0, // strikeout
+                ANSI_CHARSET, // char set
+                OUT_DEFAULT_PRECIS, // out precision
+                CLIP_DEFAULT_PRECIS, // clip precision
+                DEFAULT_QUALITY, // quality
+                DEFAULT_PITCH | FF_DONTCARE, // Pitch and family
+                L"Arial" // Face name
+            );
+            SendMessage(g_hDot, WM_SETFONT, (WPARAM)hFont, TRUE);
+
+            HWND hEdit = GetDlgItem(g_hDlg, IDC_EDIT1);
+            SendMessage(hEdit, WM_SETFONT, (WPARAM)hFont, TRUE);
+
             UpdateDisplayedText();
             return (INT_PTR)TRUE;
         }
