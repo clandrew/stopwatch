@@ -19,7 +19,7 @@ Looks like this:
 
 **Reset:** Stops the timer and clears the time back to 0.
 
-If timing is happening, a dot appears beside the timer.
+If timing is happening, a 'play' icon appears beside the timer.
 
 The timing goes up to 1 hour, then resets automatically.
 
